@@ -1,7 +1,7 @@
 {
   "name": "vue-ele-form-markdown-editor",
   "description": "vue-ele-form 的 markdown 编辑器",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "private": false,
   "scripts": {
@@ -20,8 +20,7 @@
     "markdown",
     "vue markdown",
     "markdown-editor",
-    "element markdown",
-    "markdown"
+    "element markdown"
   ],
   "dependencies": {
     "mavon-editor": "^2.7.5"

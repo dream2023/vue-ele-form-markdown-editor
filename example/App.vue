@@ -19,9 +19,11 @@ export default {
   name: 'App',
   data () {
     return {
-      formData: {},
+      formData: {
+        content: ''
+      },
       formDesc: {
-        desc: {
+        content: {
           label: '文章',
           type: 'markdown-editor',
           attrs: {
