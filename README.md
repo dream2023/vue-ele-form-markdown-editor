@@ -46,6 +46,7 @@ formDesc: {
       // 上传相关
       action: 'https://xxx.com/upload/images', // 上传地址
       data: {token: 'xxx'},
+      name: 'img', // 文件名
       // 对响应结果进一步处理
       responseFn (response, file) {
         return 'https://xxx.com/upload/images' + response // 这里返回上传后的url即可

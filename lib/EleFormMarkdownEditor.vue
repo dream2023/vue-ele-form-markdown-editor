@@ -11,10 +11,9 @@
 </template>
 
 <script>
-import formMixin from 'vue-ele-form/lib/mixins/formMixin'
-import uploadMixin from 'vue-ele-form/lib/mixins/uploadMixin'
+import { formMixin, uploadMixin } from 'vue-ele-form'
 import { mavonEditor } from 'mavon-editor'
-require('mavon-editor/dist/css/index.css')
+import 'mavon-editor/dist/css/index.css'
 
 export default {
   name: 'markdown-editor',
@@ -26,6 +25,7 @@ export default {
     return {
       defaultAttrs: {
         boxShadow: false,
+        name: 'file',
         toolbars: {
           bold: true, // 粗体
           italic: true, // 斜体

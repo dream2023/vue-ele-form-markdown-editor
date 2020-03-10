@@ -8,7 +8,15 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
-Vue.use(EleForm)
+Vue.use(EleForm, {
+  'markdown-editor': {
+    action: 'https://jsonplaceholder.typicode.com/posts/',
+    responseFn (response, file) {
+      return URL.createObjectURL(file.raw)
+    }
+  }
+})
+
 Vue.component('markdown-editor', EleFormMarkdownEditor)
 
 new Vue({
