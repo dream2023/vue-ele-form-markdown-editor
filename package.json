@@ -15,7 +15,6 @@
     "url": "https://github.com/dream2023/vue-ele-form-markdown-editor"
   },
   "main": "lib/index.js",
-  "browser": "dist/vue-ele-form-markdown-editor.umd.min.js",
   "homepage": "https://github.com/dream2023/vue-ele-form-markdown-editor",
   "keywords": [
     "vue-ele-form",
