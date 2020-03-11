@@ -1,0 +1,26 @@
+name: github pages
+
+on:
+  push: # 在 push 时
+    branches: master # 且 为 master 分支
+    paths: lib/** # 且 仅当 lib 目录下文件变动
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - name: install # 安装
+        run: yarn
+        
+      - name: lint # lint 检测
+        run: yarn lint
+        
+      - name: build # build 代码
+        run: yarn build
+        
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.DEEPLOY_KEY }}
+          publish_dir: ./dist
