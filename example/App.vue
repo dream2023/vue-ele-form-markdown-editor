@@ -27,9 +27,10 @@ export default {
           label: '文章',
           type: 'markdown-editor',
           attrs: {
-            action: 'https://jsonplaceholder.typicode.com/posts',
+            action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
             responseFn (response, file) {
-              return file.url
+              // 因为是 mock 地址, 所以, 总是返回同一张图片的URL, 正常使用的时候不会
+              return response.url
             }
           }
         }

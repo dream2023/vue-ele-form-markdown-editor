@@ -58,6 +58,54 @@ formDesc: {
 }
 ```
 
+## 示例
+
+```html
+<template>
+  <ele-form
+    v-model="formData"
+    :form-desc="formDesc"
+    :request-fn="handleRequest"
+    :span="22"
+    @request-success="handleSuccess"
+  />
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      formData: {
+        content: ''
+      },
+      formDesc: {
+        content: {
+          label: '文章',
+          type: 'markdown-editor',
+          attrs: {
+            action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+            responseFn (response, file) {
+              // 因为是 mock 地址, 所以, 总是返回同一张图片的URL, 自己项目使用, 不会
+              return response.url
+            }
+          }
+        }
+      }
+    }
+  },
+  methods: {
+    handleRequest (data) {
+      console.log(data)
+      return Promise.resolve()
+    },
+    handleSuccess () {
+      this.$message.success('提交成功')
+    }
+  }
+}
+</script>
+```
+
 ## 上传图片属性说明
 
 ```js
