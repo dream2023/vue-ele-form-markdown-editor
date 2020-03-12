@@ -1,25 +1,26 @@
-name: github pages
+name: build-and-deploy
 
 on:
-  push: # 在 push 时
-    branches: master # 且 为 master 分支
+  push:
+    branches:
+      - master
+    paths:
+      - lib/**
+      - example/**
 
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
+  build-deploy:
+    runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v1
-      - name: install # 安装
-        run: yarn
-        
-      - name: lint # lint 检测
-        run: yarn lint
-        
-      - name: build # build 代码
+      - uses: actions/checkout@master
+
+      - name: build
         run: yarn build
-        
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.DEEPLOY_KEY }}
-          publish_dir: ./dist
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v2.5.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./docs
