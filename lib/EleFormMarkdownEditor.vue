@@ -11,7 +11,8 @@
 </template>
 
 <script>
-import { formMixin, uploadMixin } from 'vue-ele-form'
+import formMixin from 'vue-ele-form/lib/mixins/formMixin'
+import uploadMixin from 'vue-ele-form/lib/mixins/uploadMixin'
 import { mavonEditor } from 'mavon-editor'
 import 'mavon-editor/dist/css/index.css'
 
